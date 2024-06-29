@@ -16,9 +16,12 @@ Expense Tracker is a web app, whre users can log their expenses, set budgets, an
 
 ## Tech Stack
 
-Programming Language: Python
-Database: SQLite
-Framework: Django
+Programming Language: Python,
+
+Database: SQLite,
+
+Framework: Django,
+
 FrontEnd: HTML, CSS, Bootstrap
 
 
