@@ -1,0 +1,12 @@
+{% extends 'expenses/base.html' %}
+{% load static %}
+{%load crispy_forms_tags %} 
+{% block content %}
+<h2>Log a New Expense</h2>
+<form class="col-md-4" method="post">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">Add Expense</button>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'expenses/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Categories</h2>
+<a class="btn btn-primary mb-2" href="{% url 'add_category' %}">Add New Category</a>
+<table class="table table-bordered col-md-4">
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for category in categories %}
+    <tr>
+        <td>{{ category.name }}</td>
+        <td>
+            <a href="{% url 'update_category' category.id %}">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

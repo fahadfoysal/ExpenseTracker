@@ -1,0 +1,12 @@
+{% extends 'expenses/base.html' %}
+{% load static %}
+{%load crispy_forms_tags %} 
+{% block content %}
+<h2>{% if update %}Update Category{% else %}Add Category{% endif %}</h2>
+<form method="post">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">{% if update %}Update{% else %}Add{% endif %} Category</button>
+</form>
+{% endblock %}

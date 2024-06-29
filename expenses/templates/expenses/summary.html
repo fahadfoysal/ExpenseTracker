@@ -1,0 +1,26 @@
+{% extends 'expenses/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Summary Report</h2>
+<table class="table table-bordered col-md-10">
+    <tr>
+        <th>Category</th>
+        <th>Total Expense</th>
+        <th>Budget</th>
+        <th>Status</th>
+    </tr>
+    {% for data in summary_data %}
+    <tr>
+        <td>{{ data.category }}</td>
+        <td>{{ data.total_expense }}</td>
+        <td>{{ data.budget }}</td>
+        <td>{% if data.exceeded == True %}
+            <span style="color: red; font-weight: bold;">Exceeded</span>
+            {% else %}<span style="color: green; font-weight: bold;">Not Exceeded</span>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
